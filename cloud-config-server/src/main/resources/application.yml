@@ -1,0 +1,22 @@
+server:
+  port: 8800
+spring:
+  application:
+    name: springcloud-config-server
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+    config:
+      server:
+        git:
+          uri: https://git.coding.net/yirenyishi/springcloud-config-profile
+          searchPaths: '{application}'
+security:
+  basic:
+    enabled: true
+  user:
+    name: root
+    password: booszy
