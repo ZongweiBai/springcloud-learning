@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: git
+  application:
+    name: user-service-provider
+#  zipkin:
+#    base-url: http://localhost:9411
+  cloud:
+    consul:
+        host: localhost
+        port: 8500
+#        discovery:
+#          instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+#          service-name: user-service-provider
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      fail-fast: true
+      username: root
+      password: booszy
+      profile: dev
