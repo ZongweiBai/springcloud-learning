@@ -1,0 +1,23 @@
+server:
+  port: 18910
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: service-consumer,user-service-provider
+  clusterNameExpression: new String('default')
+#  clusterNameExpression: "'default'"
+spring:
+  application:
+    name: hystrix-turbine-dashboard
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+        service-name: hystrix-turbine-dashboard
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

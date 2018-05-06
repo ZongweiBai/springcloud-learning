@@ -17,6 +17,6 @@ spring:
         enabled: true
         service-id: config-server
       fail-fast: true
-      username: root
-      password: booszy
+#      username: root
+#      password: booszy
       profile: dev
