@@ -6,6 +6,9 @@ turbine:
   appConfig: service-consumer,user-service-provider
   clusterNameExpression: new String('default')
 #  clusterNameExpression: "'default'"
+  combine-host: true
+  instanceUrlSuffix:
+    default: actuator/hystrix.stream  #key是clusterConfig集群的名字，value是hystrix监控的后缀，springboot2.0为actuator/hystrix.stream
 spring:
   application:
     name: hystrix-turbine-dashboard
