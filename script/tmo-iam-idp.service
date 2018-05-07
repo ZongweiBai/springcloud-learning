@@ -1,0 +1,13 @@
+[Unit]
+Description=IAM IDPproxy
+
+[Service]
+Type=simple
+User=iamtmo
+ExecStart=/opt/iamtmo/ca/iam_idp/bin/iam_idpproxy start
+ExecStop=/opt/iamtmo/ca/iam_idp/bin/iam_idpproxy stop
+RemainAfterExit=yes
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
