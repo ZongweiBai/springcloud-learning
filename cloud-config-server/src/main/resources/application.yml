@@ -2,7 +2,7 @@ server:
   port: 18800
 spring:
   application:
-    name: config-server
+    name: cloud-config-server
   cloud:
     consul:
       host: localhost
