@@ -13,6 +13,8 @@
         <module>cloud-config-server</module>
         <module>cloud-user-server</module>
         <module>cloud-order-server</module>
+        <module>cloud-zuul-router</module>
+        <module>hystrix-turbine-dashboard</module>
     </modules>
 
     <profiles>
@@ -26,6 +28,8 @@
                 <module>cloud-config-server</module>
                 <module>cloud-user-server</module>
                 <module>cloud-order-server</module>
+                <module>cloud-zuul-router</module>
+                <module>hystrix-turbine-dashboard</module>
             </modules>
         </profile>
     </profiles>

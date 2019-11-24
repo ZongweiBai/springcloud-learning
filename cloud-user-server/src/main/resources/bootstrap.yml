@@ -2,7 +2,7 @@ spring:
   profiles:
     active: git
   application:
-    name: user-service-provider
+    name: cloud-user-server
 #  zipkin:
 #    base-url: http://localhost:9411
   cloud:
@@ -15,7 +15,7 @@ spring:
     config:
       discovery:
         enabled: true
-        service-id: config-server
+        service-id: cloud-config-server
       fail-fast: true
 #      username: root
 #      password: booszy
