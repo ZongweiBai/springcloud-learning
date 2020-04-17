@@ -1,6 +1,8 @@
 package com.github.baymin.springcloud.userserver.controller;
 
 import com.github.baymin.springcloud.userserver.model.User;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RequestMapping("user")
 @RestController
+@RefreshScope
 public class UserController {
 
 //    @Autowired
@@ -32,20 +35,11 @@ public class UserController {
         return user;
     }
 
-//    /**
-//     * @return
-//     */
-//    @GetMapping("list")
-//    public List<User> users() {
-//        try {
-//            List<User> user = userService.findAll();
-//            if (user != null && user.size() != 0) {
-//                return user;
-//            }
-//            return null;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
+    @Value("${nacos.config}")
+    private String config;
+
+    @RequestMapping("/getValue")
+    public String getValue() {
+        return config;
+    }
 }

@@ -10,7 +10,7 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 @EnableHystrix
 public class UserServerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(UserServerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(UserServerApplication.class, args);
+    }
 }
