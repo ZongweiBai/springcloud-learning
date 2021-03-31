@@ -12,9 +12,9 @@ import java.util.List;
 @FeignClient(name = "cloud-user-server", fallback = HystrixFeignFallback.class, configuration = MFeignConfig.class)
 public interface MFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/user/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/users/{id}")
     User getUser(@PathVariable("id") String id);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/user/list")
+    @RequestMapping(method = RequestMethod.GET, value = "/users")
     List<User> getUsers();
 }

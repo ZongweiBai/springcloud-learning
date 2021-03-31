@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.baymin.springcloud</groupId>
+    <groupId>com.github.baymin</groupId>
     <artifactId>cloud-project</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -19,18 +19,6 @@
                 <module>cloud-parent</module>
                 <module>cloud-user-server</module>
                 <module>cloud-order-server</module>
-            </modules>
-        </profile>
-
-        <profile>
-            <id>cloud-v1</id>
-            <modules>
-                <module>cloud-parent</module>
-                <module>cloud-config-server</module>
-                <module>cloud-user-server</module>
-                <module>cloud-order-server</module>
-                <module>cloud-zuul-router</module>
-                <module>hystrix-turbine-dashboard</module>
             </modules>
         </profile>
     </profiles>
