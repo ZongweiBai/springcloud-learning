@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: cloud-id-generator
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        namespace: spring-cloud-in-action
+        group: spring-cloud-in-action
+        server-addr: 192.168.3.168:8848
+      config:
+        enabled: true
+        namespace: spring-cloud-in-action
+        group: spring-cloud-in-action
+        server-addr: 192.168.3.168:8848
+        file-extension: yml
