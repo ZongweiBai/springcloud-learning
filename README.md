@@ -1,30 +1,32 @@
-# springcloud-learning
-A simple example of micro-service created by springboot+springcloud
+# spring-cloud-in-action
+A collection of micro-service created by spring boot and spring cloud.
 
-### Consul
+## Services
 
-```bash
-# start with dev mode
-./consul agent -dev
-```
+### Cloud-Gateway
 
-### Zipkin
+Spring Cloud Gateway application.
 
-```bash
-# download lastest server jar
-wget -O zipkin.jar 'https://search.maven.org/remote_content?g=io.zipkin.java&a=zipkin-server&v=LATEST&c=exec'
+### Cloud-Id-Generator
 
-# start with 'java -jar'
-java -jar zipkin.jar
-```
+Integration with Baidu UID Generator.
 
-### Hystrix Dashboard
+### Cloud-OAuth2-Server
 
-http://localhost:18910/hystrix
+Provide unified authentication service based on the standard OAuth2 protocol implemented by spring cloud oauth2.
 
-### Apollo
+## TODO
 
-https://github.com/ctripcorp/apollo
+- [x] Integrate Nacos service
+- [ ] Integrate Skywalking
+- [ ] Integrate Prometheus
+- [ ] Integrate Sentinel
+- [ ] Integrate Spring Boot Admin
+- [ ] Docker deployment
+- [ ] Upgrade OAuth2 Server to Spring Cloud Authorization
+- [ ] Web UI
+
+## Other Micro-Service Components
 
 ### Resilience4j
 
@@ -36,14 +38,4 @@ https://www.jianshu.com/p/a3a5e29b735f
 
 https://github.com/resilience4j/resilience4j-spring-boot2-demo
 
-### Skywalking
-
-https://github.com/apache/skywalking
-
-### Prometheus
-
-https://github.com/prometheus/prometheus
-
-### Spring cloud oauth2
-
-### Spring cloud gateway
+### 

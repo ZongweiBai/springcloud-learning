@@ -1,0 +1,51 @@
+server:
+  port: 21000
+
+spring:
+  application:
+    name: CLOUD-GATEWAY
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+      discovery:
+        locator:
+          # 关闭服务发现根据service-name自动配置route的功能
+          enabled: false
+      routes:
+        - id: PLATFORM-MANAGER
+          predicates:
+            - Path=/oauth2/**
+          filters:
+            - RewritePath=/oauth2/(?<segment>.*), /oauth2-server/$\{segment}
+            - RequestTime
+          uri: lb://OAUTH2-SERVER
+        - id: FILE-SERVER
+          predicates:
+            - Path=/file/**
+          filters:
+            - StripPrefix=1
+            - RequestTime
+          uri: lb://FILE-SERVER
+        - id: WS-IM-SERVER
+          predicates:
+            - Path=/ws-im/**
+          filters:
+            - StripPrefix=1
+          uri: lb://WS-IM-SERVER
+
+# actuator相关配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+  endpoint:
+    health:
+      enabled: true
+      show-details: always

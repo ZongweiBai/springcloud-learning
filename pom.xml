@@ -20,6 +20,8 @@
                 <module>cloud-user-server</module>
                 <module>cloud-order-server</module>
                 <module>cloud-id-generator</module>
+                <module>cloud-oauth2-server</module>
+                <module>cloud-gateway</module>
             </modules>
         </profile>
     </profiles>

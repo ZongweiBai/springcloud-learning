@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        namespace: spring-cloud-in-action
+        group: spring-cloud-in-action
+        server-addr: discovery.nacos:8848
+        service: ${spring.application.name}
+      config:
+        enabled: true
+        namespace: spring-cloud-in-action
+        group: spring-cloud-in-action
+        server-addr: discovery.nacos:8848
+        file-extension: yml
