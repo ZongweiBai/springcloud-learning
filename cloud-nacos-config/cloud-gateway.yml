@@ -17,11 +17,12 @@ spring:
           # 关闭服务发现根据service-name自动配置route的功能
           enabled: false
       routes:
-        - id: PLATFORM-MANAGER
+        - id: OAUTH2-SERVER
           predicates:
             - Path=/oauth2/**
           filters:
-            - RewritePath=/oauth2/(?<segment>.*), /oauth2-server/$\{segment}
+            #- RewritePath=/oauth2/(?<segment>/?.*), /oauth2-server/$\{segment}
+            - RewritePath=/oauth2(?<segment>.*), $\{segment}
             - RequestTime
           uri: lb://OAUTH2-SERVER
         - id: FILE-SERVER
@@ -37,7 +38,13 @@ spring:
           filters:
             - StripPrefix=1
           uri: lb://WS-IM-SERVER
-
+        # 非服务发现的配置
+        - id: CBOARD-BOOT
+          predicates:
+            - Path=/cboard/**
+          filters:
+            - RequestTime
+          uri: "http://localhost:20001/cboard"
 # actuator相关配置
 management:
   endpoints:
