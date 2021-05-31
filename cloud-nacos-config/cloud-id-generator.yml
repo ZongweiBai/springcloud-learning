@@ -11,10 +11,14 @@ spring:
     name: CLOUD-ID-GENERATOR
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://192.168.3.168:3306/cloud-id-generator?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
-    username: root
+#    url: jdbc:mysql://192.168.3.168:3306/cloud-id-generator?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://192.168.3.168:54320/postgres?currentSchema=cloud-id-generator
+    username: postgres
     password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 4
       minimum-idle: 2
