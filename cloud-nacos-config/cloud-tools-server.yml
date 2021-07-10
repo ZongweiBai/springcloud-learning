@@ -1,21 +1,23 @@
 server:
   port: 21002
   servlet:
+    context-path: /tools
     encoding:
       charset: UTF-8
       enabled: true
       force: true
+  shutdown: graceful
 
 spring:
   application:
-    name: CLOUD-ID-GENERATOR
+    name: CLOUD-TOOLS-SERVER
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
 #    url: jdbc:mysql://192.168.3.168:3306/cloud-id-generator?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
 #    username: root
 #    password: root
 #    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:postgresql://192.168.3.168:54320/postgres?currentSchema=cloud-id-generator
+    url: jdbc:postgresql://192.168.3.168:54320/postgres?currentSchema=cloud-in-action
     username: postgres
     password: root
     driver-class-name: org.postgresql.Driver
@@ -39,3 +41,13 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
+
+dfs:
+  store: minio
+  minio:
+    endpoint: 192.168.3.168
+    port: 29000
+    accessKey: minio
+    secretKey: minio123
+    secure: false
+    bucketName: cloud-in-action

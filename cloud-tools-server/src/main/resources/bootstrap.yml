@@ -1,6 +1,6 @@
 spring:
   application:
-    name: cloud-id-generator
+    name: cloud-tools-server
   cloud:
     nacos:
       discovery:

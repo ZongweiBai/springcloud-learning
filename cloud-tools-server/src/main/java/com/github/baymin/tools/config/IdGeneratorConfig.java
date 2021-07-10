@@ -1,4 +1,4 @@
-package com.github.baymin.idgenerator.config;
+package com.github.baymin.tools.config;
 
 import com.baidu.fsg.uid.UidGenerator;
 import com.baidu.fsg.uid.impl.CachedUidGenerator;

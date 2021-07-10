@@ -1,4 +1,4 @@
-package com.github.baymin.idgenerator.payload;
+package com.github.baymin.tools.payload;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;

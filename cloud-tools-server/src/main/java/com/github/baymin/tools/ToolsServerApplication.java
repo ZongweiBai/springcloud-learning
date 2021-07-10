@@ -1,4 +1,4 @@
-package com.github.baymin.idgenerator;
+package com.github.baymin.tools;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,12 +11,12 @@ import java.util.TimeZone;
  * @author zongwei
  * @date 2021-04-03 09:26:13
  */
-@SpringBootApplication(scanBasePackages = {"com.baidu.fsg.uid", "com.github.baymin.idgenerator"})
+@SpringBootApplication(scanBasePackages = {"com.baidu.fsg.uid", "com.github.baymin.tools"})
 @EnableDiscoveryClient
-public class IdGeneratorApplication {
+public class ToolsServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(IdGeneratorApplication.class, args);
+        SpringApplication.run(ToolsServerApplication.class, args);
     }
 
     @PostConstruct

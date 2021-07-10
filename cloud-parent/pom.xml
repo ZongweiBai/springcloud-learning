@@ -26,6 +26,7 @@
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
         <groovy.version>3.0.8</groovy.version>
         <spring-boot-admin.version>2.3.1</spring-boot-admin.version>
+        <minio.version>7.1.0</minio.version>
     </properties>
 
     <dependencyManagement>
@@ -63,6 +64,12 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>3.0.0</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/io.github.resilience4j/resilience4j-spring-boot2 -->

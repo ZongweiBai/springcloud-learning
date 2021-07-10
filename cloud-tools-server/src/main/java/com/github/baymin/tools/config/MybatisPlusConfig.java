@@ -1,4 +1,4 @@
-package com.github.baymin.idgenerator.config;
+package com.github.baymin.tools.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
